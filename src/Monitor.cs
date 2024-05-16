@@ -19,9 +19,11 @@ namespace hardwareMonitor
             {
                 SerialPortManager.InitializeSerialPort(Parametres.SERIAL_PORT, Parametres.BAUD_RATE);
                 ArduinoInterfaceManager.setArduinoInterface(Parametres.IS_BIG_MODE);
+                ComputersManager.initComputers();
 
-                //TODO: initialize monitors for each component
-
+                _monitorThread = new Thread(MonitoringMainProcess);
+                _monitorThread.IsBackground = true;
+                _monitorRunning = true;
                 _monitorThread.Start();
             }
             catch (Exception e)
@@ -56,7 +58,7 @@ namespace hardwareMonitor
             {
                 string dataToSend = ArduinoInterfaceManager.START_SEPARATE.ToString();
 
-                //TODO: enable sensors
+                SensorsAccessor.getCpuDataToString(ref dataToSend);
 
                 dataToSend += ArduinoInterfaceManager.END_SEPARATE;
 
