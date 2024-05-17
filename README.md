@@ -1,5 +1,13 @@
 # Hardware-Mon
-Hardware monitor based on C# and ARDUINO UI
+приложение состоит из двух частей
++ Hardware-Mon.exe
++ Arduino.ino
+
+Arduino подключается к компьютеру через USB для получения данных через com-порт.
+Приложение Hardware-Mon собирает данные с компьютерных датчиков, используя библиотеку OpenHardwareMonitor.dll
+и отправляет их через com-порт в Arduino для отображения.
+### Схема соединения
+![image](https://github.com/tuffii/Hardware-Monitor/assets/100721921/cf269178-3597-4b29-b897-c4363179e5c0)
 
 ## Участники Группы
 1. Софья Карпова 5130904/10101
@@ -14,3 +22,10 @@ Hardware monitor based on C# and ARDUINO UI
 OpenHardwareMonitorLib.dll
 
 ## Инструкция для запуска
+VisualStudio 2019+ с установленными пакетами .NET 4.8
+использовать compileApplication.bat для сборки .exe файла
+
+## Демонстрация работы
+
+![image](https://github.com/tuffii/Hardware-Monitor/assets/100721921/91bd7c58-dca6-42f5-88b8-370235bb01cf)
+![image](https://github.com/tuffii/Hardware-Monitor/assets/100721921/d867286c-2211-443d-8c47-a72f41403e42)
