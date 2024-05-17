@@ -1,4 +1,4 @@
-using OpenHardwareMonitor.Hardware;
+﻿using OpenHardwareMonitor.Hardware;
 using System.Collections.Generic;
 
 namespace hardwareMonitor
