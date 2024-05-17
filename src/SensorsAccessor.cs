@@ -42,6 +42,19 @@ namespace hardwareMonitor
         }
 
 
+        public static void getSsdDataToString(ref string buffer)
+        {
+
+            if (Parametres.GET_SSD_TEMPERATURE && !Parametres.IS_BIG_MODE)
+            {
+                List<Temperature> result = SSD.GetSsdTemperature();
+                foreach (Temperature temperature in result)
+                {
+                    buffer += ComputersManager.Types.SSD + ":   " + temperature.Temp + "\n";
+                }
+            }
+        }
+
         public static void getRamDataToString(ref string buffer)
         {
             if (Parametres.GET_RAM_USAGE && !Parametres.IS_BIG_MODE)
