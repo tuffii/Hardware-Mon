@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Threading;
 
 namespace hardwareMonitor
@@ -59,6 +59,9 @@ namespace hardwareMonitor
                 string dataToSend = ArduinoInterfaceManager.START_SEPARATE.ToString();
 
                 SensorsAccessor.getCpuDataToString(ref dataToSend);
+                SensorsAccessor.getGpuDataToString(ref dataToSend);
+                SensorsAccessor.getSsdDataToString(ref dataToSend);
+                SensorsAccessor.getRamDataToString(ref dataToSend);
 
                 dataToSend += ArduinoInterfaceManager.END_SEPARATE;
 
